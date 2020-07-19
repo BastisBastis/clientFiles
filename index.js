@@ -17,7 +17,7 @@ const config = {
             debug: false
         }
     },
-    scene: [
+    scene: [ 
         Game
     ]
 };
