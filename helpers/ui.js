@@ -13,7 +13,7 @@ export default class UI {
       	this.playerWindow = new PlayerWindow(scene, player);
       	this.targetWindow = new TargetWindow(scene, player);
         //ActionButtons
-        this.setupActionButtons();
+        this.setupActionButtons(); 
       
       	this.inventoryWindow = new InventoryWindow(scene, player,100,200);
       	
