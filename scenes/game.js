@@ -90,7 +90,8 @@ export default class Game extends Phaser.Scene {
             spriteKey:data.spriteKey,
             name:data.name,
             id: data.id,
-            scene:self
+            scene:self,
+            items:data.items
           });
         });
         

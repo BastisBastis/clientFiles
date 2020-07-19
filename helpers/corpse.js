@@ -8,13 +8,15 @@ export default class Corpse {
 		y,
 		spriteKey,
       	name,
-      	id
+      	id,
+        items
 	}) {
 		this.sprite = scene.add.image(x ,y,spriteKey);
 		this.x=x;
 		this.y=y;
       	this.name=name;
       	this.id = id;
+        this.items=items;
       	if (this.sprite.width>this.sprite.height)
           this.sprite.setScale(spriteMaxWidth/this.sprite.width);
       	else
