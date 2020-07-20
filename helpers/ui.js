@@ -1,8 +1,8 @@
 import Button from './button';
-import ExpManager from './expManager';
 import PlayerWindow from './uiElements/playerWindow';
 import TargetWindow from './uiElements/targetWindow';
 import InventoryWindow from './uiElements/inventoryWindow';
+import LootWindow from './uiElements/lootWindow';
 
 export default class UI { 
  	constructor (scene, player) {
@@ -16,7 +16,10 @@ export default class UI {
         this.setupActionButtons();
       
       	this.inventoryWindow = new InventoryWindow(scene, player,100,200);
-      	
+        
+        this.lootWindow = new LootWindow({
+          scene:scene
+        });
       	
     }
   
