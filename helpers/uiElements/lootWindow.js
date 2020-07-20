@@ -29,7 +29,7 @@ export default class LootWindow extends Window {
         this.items = items;
         
         
-        
+         
         this.slots = {};
         let slotIndex = 0;
         for (const row = 0; i<rows;row++) {
