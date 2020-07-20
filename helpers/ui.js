@@ -19,7 +19,7 @@ export default class UI {
         
         this.lootWindow = new LootWindow({
           scene:scene
-        });
+        }); 
       	
     }
    
