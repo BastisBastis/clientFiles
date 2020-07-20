@@ -27,7 +27,7 @@ export default class LootWindow extends Window {
         this.corpseName = corpseName || 'a corpse';
         
         this.items = items;
-        
+         
         
          
         this.slots = {};
