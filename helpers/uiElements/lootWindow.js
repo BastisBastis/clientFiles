@@ -1,5 +1,5 @@
 import Window from './window';
-import * as UIConst from '/uiConstants';
+import * as UIConst from './uiConstants';
 import Slot from './slot';
 
 const columns = 2;
