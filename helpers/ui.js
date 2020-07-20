@@ -22,7 +22,7 @@ export default class UI {
         });
       	
     }
-  
+   
   update () { 
   	//Room for optimization
     this.playerWindow.update();
