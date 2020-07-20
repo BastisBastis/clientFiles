@@ -23,7 +23,7 @@ export default class UI {
       	
     }
   
-  update () {
+  update () { 
   	//Room for optimization
     this.playerWindow.update();
     this.targetWindow.update();
