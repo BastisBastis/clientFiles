@@ -10,7 +10,7 @@ export default class LootWindow extends Window {
         x = 10,
         y = 10,
         corpseId,
-        corpseName,
+        corpseName, 
         items = ['sword']
     }) {
         const width = columns*UIConst.slotWidth + (columns+1)*UIConst.slotMargin;
