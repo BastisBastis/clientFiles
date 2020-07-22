@@ -14,7 +14,7 @@ export default class LootWindow extends Window {
         items = {corpse1:'sword'}
     }) {
         const width = columns*UIConst.slotWidth + (columns+1)*UIConst.slotMargin;
-        const rows = Math.floor((items.length+1)/2)
+        const rows = Math.floor((Object.values(items).length+1)/2)
         const height = rows * UIConst.slotHeight + (rows+1) * UIConst.slotMargin;
         super({
             scene:scene,
