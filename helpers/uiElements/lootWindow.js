@@ -18,8 +18,8 @@ export default class LootWindow extends Window {
         const height = rows * UIConst.slotHeight + (rows+1) * UIConst.slotMargin;
         super({
             scene:scene,
-            x:x,
-            y:y,
+            x:x+width/2,
+            y:y+height/2,
             width:width,
             height:height
         })
@@ -31,7 +31,7 @@ export default class LootWindow extends Window {
         
          
         this.slots = {};
-        let slotIndex = 0;
+        let slotIndex = 1;
         for (let row = 0; row<rows;row++) {
             for (let col = 0; col<columns;col++) {
                 const slotX = x+(col+1)*UIConst.slotMargin + (col+0.5)*UIConst.slotWidth;
