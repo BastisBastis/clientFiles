@@ -32,7 +32,7 @@ export default class LootWindow extends Window {
          
         this.slots = {};
         let slotIndex = 0;
-        for (const row = 0; i<rows;row++) {
+        for (const row = 0; row<rows;row++) {
             for (const col = 0; col<columns;col++) {
                 const slotX = x+(col+1)*UIConst.slotMargin + (col+0.5)*UIConst.slotWidth;
                 const slotY = y+(row+1)*UIConst.slotMargin + (row+0.5)*UIConst.slotHeight;
