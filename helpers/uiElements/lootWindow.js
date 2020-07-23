@@ -51,7 +51,7 @@ export default class LootWindow extends Window {
             }
         }
         
-        console.log(x+UIConst.slotMargin + UIConst.slotWidth/2, y+height-UIConst.margin-UIConst.slotHeight/2);
+        console.log(x+UIConst.slotMargin + UIConst.slotWidth/2, y+height-UIConst.margin);//-UIConst.slotHeight/2);
         //Make this compatiboe eith other column counts
         this.lootBtn = new Button({
           scene:scene,
