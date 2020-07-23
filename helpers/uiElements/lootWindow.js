@@ -21,7 +21,7 @@ export default class LootWindow extends Window {
             x:x+width/2,
             y:y+height/2,
             width:width,
-            height:height
+            height:height 
         })
         this.corpseId = corpseId || 'someId';
         this.corpseName = corpseName || 'a corpse';
