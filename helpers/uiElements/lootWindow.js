@@ -54,6 +54,7 @@ export default class LootWindow extends Window {
     }
 
     slotAction(slot, self) {
+        console.log(slot.selected);
         if (slot.selected)
             slot.deselect();
         else
