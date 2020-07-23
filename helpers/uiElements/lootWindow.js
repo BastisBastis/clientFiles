@@ -57,7 +57,7 @@ export default class LootWindow extends Window {
         
         if (slot.selected)
             slot.deselect();
-        else if (true || self.items[slot.key])
+        else if (self.items[slot.key])
             slot.select();
             
         
