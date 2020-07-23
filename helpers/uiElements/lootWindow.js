@@ -54,11 +54,11 @@ export default class LootWindow extends Window {
     }
 
     slotAction(slot, self) {
-        console.log(slot.selected);
+        
         if (slot.selected)
             slot.deselect();
         else
-            slot.deselect();
+            slot.select();
             
         for (const otherSlot in Object.values(self.slots))
             if (otherSlot.selected)
