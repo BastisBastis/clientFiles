@@ -59,7 +59,7 @@ export default class LootWindow extends Window {
           x: x+UIConst.slotMargin + UIConst.slotWidth/2,
           y: y+height-UIConst.slotMargin-UIConst.slotHeight/4,
           width:UIConst.slotWidth,
-          height:UIConst.slotHeight/2
+          height:UIConst.slotHeight/2,
           alpha: 0.7,
           text: 'Loot',
           onButtonDown:[{func:this.lootItem,arg:this}],
