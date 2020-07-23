@@ -1,6 +1,7 @@
 import Window from './window';
 import * as UIConst from './uiConstants';
 import Slot from './slot';
+import Button from '../button';
 
 const columns = 2;
 
@@ -50,7 +51,22 @@ export default class LootWindow extends Window {
             }
         }
         
+        //Make this compatiboe eith other column counts
+        this.lootBtn = new Button({
+          scene:scene,
+          x: x+UIConst.slotMargin + UIConst.slotWidth/2,
+          y: this.height-UIConst.margin-UIConst.slotHeight/2,
+          alpha: 0.7,
+          text: 'loot',
+          onButtonDown:[{func:this.lootItem,arg:this}],
+          toggle:0
+        });
 
+
+    }
+    
+    lootItem(button,self){
+        console.log('Loot '+self.corpseName);
     }
 
     slotAction(slot, self) {
