@@ -36,7 +36,7 @@ export default class LootWindow extends Window {
             for (let col = 0; col<columns;col++) {
                 const slotX = x+(col+1)*UIConst.slotMargin + (col+0.5)*UIConst.slotWidth;
                 const slotY = y+(row+1)*UIConst.slotMargin + (row+0.5)*UIConst.slotHeight;
-                this.slots['slot'+slotIndex] = new Slot({
+                this.slots['corpse'+slotIndex] = new Slot({
                     scene:scene,
                     x:slotX,
                     y:slotY,
@@ -54,16 +54,17 @@ export default class LootWindow extends Window {
     }
 
     slotAction(slot, self) {
-        console.log(self.slots.slot1.key);
         
         if (slot.selected)
             slot.deselect();
         else if (true || self.items[slot.key])
             slot.select();
             
-        for (const [_,otherSlot] in Object.entries(self.slots))
+        for (const [_,otherSlot] in Object.entries(self.slots)) (
+            console.log(otherSlot.key, otherSlot.selected);
             if (otherSlot.selected && otherSlot.key != slot.key)
                 otherSlot.deselect();
+        }
     }
 
 }
