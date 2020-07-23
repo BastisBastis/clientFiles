@@ -16,7 +16,7 @@ export default class LootWindow extends Window {
     }) {
         const width = columns*UIConst.slotWidth + (columns+1)*UIConst.slotMargin;
         const rows = Math.floor((Object.values(items).length+1)/2)
-        const height = (rows +1) * UIConst.slotHeight + (rows+2) * UIConst.slotMargin;
+        const height = (rows +0.5) * UIConst.slotHeight + (rows+1.5) * UIConst.slotMargin;
         super({
             scene:scene,
             x:x+width/2,
@@ -50,15 +50,18 @@ export default class LootWindow extends Window {
                 });
             }
         }
+        console.
         
         //console.log(x+UIConst.slotMargin + UIConst.slotWidth/2, y+height-UIConst.margin);//-UIConst.slotHeight/2);
         //Make this compatiboe eith other column counts
         this.lootBtn = new Button({
           scene:scene,
           x: x+UIConst.slotMargin + UIConst.slotWidth/2,
-          y: y+height-UIConst.slotMargin-UIConst.slotHeight/2,
+          y: y+height-UIConst.slotMargin-UIConst.slotHeight/4,
+          width:UIConst.slotWidth,
+          height:UIConst.slotHeight/2
           alpha: 0.7,
-          text: 'loot',
+          text: 'Loot',
           onButtonDown:[{func:this.lootItem,arg:this}],
           toggle:0
         });
@@ -66,7 +69,7 @@ export default class LootWindow extends Window {
 
     }
     
-    lootItem(button,self){
+    lootItem(self){
         console.log('Loot '+self.corpseName);
     }
 
