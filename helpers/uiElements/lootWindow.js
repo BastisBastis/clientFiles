@@ -60,8 +60,10 @@ export default class LootWindow extends Window {
         else if (true || self.items[slot.key])
             slot.select();
             
-        for (const [_,otherSlot] in Object.entries(self.slots)) {
-            console.log(otherSlot.key, otherSlot.selected);
+        
+            
+        for (const [_,otherSlot] of Object.entries(self.slots)) {
+            //console.log(otherSlot.key, otherSlot.selected);
             if (otherSlot.selected && otherSlot.key != slot.key)
                 otherSlot.deselect();
         }
