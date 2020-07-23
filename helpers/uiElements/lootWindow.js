@@ -55,7 +55,7 @@ export default class LootWindow extends Window {
         this.lootBtn = new Button({
           scene:scene,
           x: x+UIConst.slotMargin + UIConst.slotWidth/2,
-          y: this.height-UIConst.margin-UIConst.slotHeight/2,
+          y: height-UIConst.margin-UIConst.slotHeight/2,
           alpha: 0.7,
           text: 'loot',
           onButtonDown:[{func:this.lootItem,arg:this}],
