@@ -16,7 +16,7 @@ export default class LootWindow extends Window {
     }) {
         const width = columns*UIConst.slotWidth + (columns+1)*UIConst.slotMargin;
         const rows = Math.floor((Object.values(items).length+1)/2)
-        const height = rows * UIConst.slotHeight + (rows+1) * UIConst.slotMargin;
+        const height = (rows +1) * UIConst.slotHeight + (rows+2) * UIConst.slotMargin;
         super({
             scene:scene,
             x:x+width/2,
@@ -55,7 +55,7 @@ export default class LootWindow extends Window {
         this.lootBtn = new Button({
           scene:scene,
           x: x+UIConst.slotMargin + UIConst.slotWidth/2,
-          y: height-UIConst.margin-UIConst.slotHeight/2,
+          y: y+height-UIConst.margin-UIConst.slotHeight/2,
           alpha: 0.7,
           text: 'loot',
           onButtonDown:[{func:this.lootItem,arg:this}],
