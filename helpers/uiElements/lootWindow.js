@@ -44,7 +44,7 @@ export default class LootWindow extends Window {
                     itemContainer:this.items,
                     key:'corpse'+slotIndex++,
                     label: '',
-                    callback:this.slotTouched,
+                    callback:this.slotAction,
                     ctx:this
                 });
             }
@@ -53,8 +53,15 @@ export default class LootWindow extends Window {
 
     }
 
-    slotTouched(slot, self) {
-        console.log(slot.key);
+    slotAction(slot, self) {
+        if (slot.selected)
+            slot.deselect();
+        else
+            slot.deselect();
+            
+        for (const otherSlot in Object.values(self.slots))
+            if (otherSlot.selected)
+                otherSlot.deselect();
     }
 
 }
