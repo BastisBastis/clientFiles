@@ -28,6 +28,7 @@ export default class LootWindow extends Window {
         this.corpseName = corpseName || 'a corpse';
         
         this.items = items;
+        this.scene=scene;
           
         
          
@@ -74,10 +75,13 @@ export default class LootWindow extends Window {
         for (const slot of Object.values(self.slots)) {
             if (slot.selected)
                 selectedSlot = slot
+            
         }
     
-        if (selectedSlot) 
-            console.log('Loot item at slot',selectedSlot.key);
+        if (selectedSlot) {
+            self.scene.socket.emit('requestToLootItemAtSlot',{player:scene.player.id,corpse:self.corpseId,slot:selectedSlot.key});
+            selectedSlot.deselect();
+        }
         else
             console.log('No slot selected');
     }
