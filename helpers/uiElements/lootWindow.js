@@ -50,7 +50,7 @@ export default class LootWindow extends Window {
                 });
             }
         }
-        console.
+        
         
         //console.log(x+UIConst.slotMargin + UIConst.slotWidth/2, y+height-UIConst.margin);//-UIConst.slotHeight/2);
         //Make this compatiboe eith other column counts
@@ -69,8 +69,17 @@ export default class LootWindow extends Window {
 
     }
     
-    lootItem(self){
-        console.log('Loot '+self.corpseName);
+    lootItem(self) {
+        let selectedSlot=false;
+        for (const slot of Object.values(self.slots)) {
+            if (slot.selected)
+                selectedSlot = slot
+        }
+    
+        if (selectedSlot) 
+            console.log('Loot item at slot',selectedSlot.key);
+        else
+            console.log('No slot selected');
     }
 
     slotAction(slot, self) {
