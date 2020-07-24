@@ -210,6 +210,8 @@ export default class Game extends Phaser.Scene {
         if (self.player.target && self.corpses[self.player.target]) {
             self.socket.emit('requestCorpseLooting',self.player.target.id);          	
         }
+        else
+            console.log('corpse or target not found);
     }
 	
 	drawMap() {
