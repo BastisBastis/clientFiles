@@ -30,7 +30,9 @@ export default class Window {
     }
     
     close() {
+        console.log(1);
         this.rect.destroy();
+        console.log(2);
     }
 
 
