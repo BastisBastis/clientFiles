@@ -66,6 +66,18 @@ export default class LootWindow extends Window {
           onButtonDown:[{func:this.lootItem,arg:this}],
           toggle:0
         });
+        
+        this.closeBtn = new Button({
+          scene:scene,
+          x: x+UIConst.slotMargin*2 + UIConst.slotWidth*1.5,
+          y: y+height-UIConst.slotMargin-UIConst.slotHeight/4,
+          width:UIConst.slotWidth,
+          height:UIConst.slotHeight/2,
+          alpha: 0.7,
+          text: 'Close',
+          onButtonDown:[{func:this.close,arg:this}],
+          toggle:0
+        });
 
 
     }
@@ -100,6 +112,16 @@ export default class LootWindow extends Window {
             if (otherSlot.selected && otherSlot.key != slot.key)
                 otherSlot.deselect();
         }
+    }
+    
+    close(self) {
+        if (!self)
+            self=this;
+        for (const slot of Object.values(self.slots))
+            slot.destroy();
+        self.lootBtn.destroy();
+        self.closeBtn.destroy();
+        super.close();
     }
 
 }

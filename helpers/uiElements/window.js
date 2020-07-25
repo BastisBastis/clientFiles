@@ -28,6 +28,10 @@ export default class Window {
   	show() {
     	this.rect.setVisible(true); 
     }
+    
+    close() {
+        this.rect.destroy();
+    }
 
 
 }

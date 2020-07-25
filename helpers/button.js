@@ -44,9 +44,9 @@ export default class Button extends Phaser.GameObjects.Rectangle {
       this.backgroundColor=backgroundColor;
       
       if (imageKey)
-        scene.add.image(x,y,imageKey).setScale(imageScale).setAngle(imageAngle).setScrollFactor(0);
+        this.image =scene.add.image(x,y,imageKey).setScale(imageScale).setAngle(imageAngle).setScrollFactor(0);
       if (text)
-        scene.add.text(x, y, text, fontStyle).setTint(textColor).setOrigin(0.5,0.5).setAlign("center").setScrollFactor(0);
+        this.label=scene.add.text(x, y, text, fontStyle).setTint(textColor).setOrigin(0.5,0.5).setAlign("center").setScrollFactor(0);
       
       let self=this;
       this.on('pointerdown', function (_,__,___, event) {    
@@ -104,6 +104,14 @@ export default class Button extends Phaser.GameObjects.Rectangle {
       if (this.selected) this.deselect();
       else this.select();
     }
+    
+    destroy() {
+        if (this.image)
+            this.image.destroy();
+        if (this.label)
+            this.label.destroy();
+        super.destroy();
+    }
   
-  }
+}
 

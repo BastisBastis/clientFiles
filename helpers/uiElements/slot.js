@@ -91,5 +91,11 @@ export default class Slot {
       	this.label.setVisible(true);
       	this.updateItem();
     }
+    
+    destroy() {
+        this.box.destroy();
+        this.label.destroy();
+        this.image.destroy();
+    }
 
 }
