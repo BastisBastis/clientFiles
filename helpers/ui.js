@@ -158,7 +158,7 @@ export default class UI {
  		
   }
   
-  openLootWindowWithData(data) {
+  openLootWindowFromData(data) {
       if (this.lootWindow) this.lootWindow.close();
       const slots={};
       for (const [i,item] of data.items) {
