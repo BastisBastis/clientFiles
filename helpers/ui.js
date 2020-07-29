@@ -161,7 +161,7 @@ export default class UI {
   openLootWindowFromData(data) {
       if (this.lootWindow) this.lootWindow.close();
       const slots={};
-      for (const [i,item] of data.items) {
+      for (const [i,item] of Object.entries(data.items)) {
           slots['corpse'+i+1]=item;
       }
       this.lootWindow = new LootWindow({
