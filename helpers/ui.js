@@ -163,7 +163,7 @@ export default class UI {
       this.lootWindow = new LootWindow({
           scene:this.scene,
           corpseId:data.corpseId,
-          corpseName=data.corpseName,
+          corpseName:data.corpseName,
           items:data.items
       });
   }
