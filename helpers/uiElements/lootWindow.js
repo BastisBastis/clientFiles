@@ -122,7 +122,7 @@ export default class LootWindow extends Window {
             slot.destroy();
         self.lootBtn.destroy();
         self.closeBtn.destroy();
-        super.close();
+        self.super.close();
     }
 
 }
