@@ -160,11 +160,15 @@ export default class UI {
   
   openLootWindowWithData(data) {
       if (this.lootWindow) this.lootWindow.close();
+      const slots={};
+      for (const [i,item] of data.items) {
+          slots['corpse'+i+1]=item;
+      }
       this.lootWindow = new LootWindow({
           scene:this.scene,
           corpseId:data.corpseId,
           corpseName:data.corpseName,
-          items:data.items
+          items:slots
       });
   }
 }
