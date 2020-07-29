@@ -126,7 +126,7 @@ export default class Game extends Phaser.Scene {
 		});
 		
 		//Recieve update on change in corpse items
-		this.socket.on('updateCorpseItems' function (data) {
+		this.socket.on('updateCorpseItems', function (data) {
 			console.log(data);
 		});
 
