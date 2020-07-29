@@ -127,7 +127,9 @@ export default class Game extends Phaser.Scene {
 
         //Start looting a corpse
         this.socket.on('lootCorpse', function(data) {
-            console.log(data);
+            //Make isLooting prevent player from moving etc
+            self.player.isLooting = true;
+            self.ui.openLootWindowFromData(data);
         });
 	}
 	
