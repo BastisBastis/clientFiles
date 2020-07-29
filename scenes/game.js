@@ -123,7 +123,12 @@ export default class Game extends Phaser.Scene {
             self.corpses[id].remove();
             delete self.corpses[id];
 
-        });
+		});
+		
+		//Recieve update on change in corpse items
+		this.socket.on('updateCorpseItems' function (data) {
+			console.log(data);
+		});
 
         //Start looting a corpse
         this.socket.on('lootCorpse', function(data) {
