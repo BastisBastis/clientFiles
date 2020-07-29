@@ -92,7 +92,7 @@ export default class LootWindow extends Window {
         }
     
         if (selectedSlot) {
-            self.scene.socket.emit('requestToLootItemAtSlot',{player:self.scene.player.id,corpse:self.corpseId,slot:selectedSlot.key});
+            self.scene.socket.emit('requestToLootItemAtSlot',{playerId:self.scene.player.id,corpse:self.corpseId,slot:selectedSlot.key});
             selectedSlot.deselect();
         }
         else
