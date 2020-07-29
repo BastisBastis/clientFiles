@@ -17,9 +17,7 @@ export default class UI {
       
       	this.inventoryWindow = new InventoryWindow(scene, player,100,200);
         
-        this.lootWindow = new LootWindow({
-          scene:scene
-        }); 
+        this.lootWindown= false;
       	
     }
     
@@ -54,6 +52,8 @@ export default class UI {
         this.attackBtn.deselect();
   }
 
+
+  //Remove this function?
   openLootWindow(corpseId) {
     console.log('UI: Should open corpse window for corpse: '+corpseId);
 
@@ -156,5 +156,15 @@ export default class UI {
         toggle:0
       });
  		
+  }
+  
+  openLootWindowWithData(data) {
+      if (this.lootWindow) this.lootWindow.close();
+      this.lootWindow = new LootWindow({
+          scene:this.scene,
+          corpseId:data.corpseId,
+          corpseName=data.corpseName,
+          items:data.items
+      });
   }
 }
