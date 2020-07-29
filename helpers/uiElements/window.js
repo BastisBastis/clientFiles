@@ -29,10 +29,10 @@ export default class Window {
     	this.rect.setVisible(true); 
     }
     
-    close() {
-        console.log(1);
-        this.rect.destroy();
-        console.log(2);
+    close(self) {
+		if (!self)
+			self = this;
+        self.rect.destroy();
     }
 
 
