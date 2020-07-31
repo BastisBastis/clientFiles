@@ -130,7 +130,7 @@ export default class Game extends Phaser.Scene {
 			console.log(data);
 			self.corpses[data.corpseId].items=data.items;
 			
-			self.ui.updateLootWindow();
+			//self.ui.updateLootWindow();
 		});
 
         //Start looting a corpse
