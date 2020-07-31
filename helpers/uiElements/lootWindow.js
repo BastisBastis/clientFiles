@@ -103,10 +103,11 @@ export default class LootWindow extends Window {
         const corpse = this.scene.corpses[this.corpseId];
         
         
-        /*for (const keys of Object.keys(this.items)) {
+        for (const key of Object.keys(this.items)) {
+            
             delete this.items[key];
         }
-        */
+        
         
         for (const [i,item] of Object.entries(corpse.items)) {
             this.items[`corpse${Number(i) + 1}`]=item;
