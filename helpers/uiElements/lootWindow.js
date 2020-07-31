@@ -104,7 +104,6 @@ export default class LootWindow extends Window {
         
         
         for (const key of Object.keys(this.items)) {
-            
             delete this.items[key];
         }
         
@@ -112,6 +111,9 @@ export default class LootWindow extends Window {
         for (const [i,item] of Object.entries(corpse.items)) {
             this.items[`corpse${Number(i) + 1}`]=item;
         }
+        
+        for (const slot of Object.values(this.slots)) 
+            slot.updateItem();
         
     }
 
