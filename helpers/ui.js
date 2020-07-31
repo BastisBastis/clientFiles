@@ -158,6 +158,12 @@ export default class UI {
  		
   }
   
+  updateLootWindow() {
+      if (this.lootWindow) {
+          this.lootWindow.updateItems();
+      }
+  }
+  
   openLootWindowFromData(data) {
       if (this.lootWindow) this.lootWindow.close();
 
