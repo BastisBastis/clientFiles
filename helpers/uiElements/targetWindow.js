@@ -16,22 +16,24 @@ export default class TargetWindow extends Window {
           height:height});
       		this.player=player;
 
-    this.targetLabel =          
+    	this.targetLabel =          
     	scene.add.text(
     	x, 
     	UIConst.labelYMargin, (player.target?player.target.name:"No target"), {fontSize:UIConst.fontSize}).setTint("#000000").setOrigin(0.5,0.5).setScrollFactor(0);
-    this.targetHpLabel = 
+	
+		this.targetHpLabel = 
     	scene.add.text(
       x, 
       UIConst.labelYMargin +UIConst.lineSpacing, 
-      (player.target?`${player.target.hp}/${player.target.maxHp}`:""), 
+      "", 
       {fontSize:UIConst.fontSize}).setTint("#000000").setOrigin(0.5,0.5).setScrollFactor(0);
 		
 	}
 	
 	update() {
   	if (this.player.target) {
-  			this.targetLabel.setText(this.player.target.name);
+			this.targetLabel.setText(this.player.target.name);
+			const hpString = this.player.target.type==='character'?`${this.player.target.hp}/${this.player.target.maxHp}`:"";
   			this.targetHpLabel.setText(`${this.player.target.hp}/${this.player.target.maxHp}`);
   		}
   		else {
