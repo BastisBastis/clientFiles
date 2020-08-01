@@ -79,9 +79,12 @@ export default class Game extends Phaser.Scene {
         });
       
       	this.socket.on('characterRespawned', function (id) {
-          	console.log("charRespawn recieved");
         	self.characters[id].respawn(); 
-        });
+		});
+		
+		this.socket.on('message', (message) => {
+			console.log(message);
+		});
       
       	this.socket.on('newCorpse', function(data) {
         	self.corpses[data.id] = new Corpse({
