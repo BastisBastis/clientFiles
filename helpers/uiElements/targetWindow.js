@@ -7,7 +7,7 @@ export default class TargetWindow extends Window {
 		
 		
 		const height = UIConst.labelYMargin*2+UIConst.lineSpacing;
-		const width= 100;
+		const width= 150;
 		const x = scene.cameras.main.centerX;
 		super({scene:scene,
 					x:x,
