@@ -127,7 +127,6 @@ export default class Game extends Phaser.Scene {
 		
 		//Recieve update on change in corpse items
 		this.socket.on('updateCorpseItems', function (data) {
-			console.log(data);
 			self.corpses[data.corpseId].items=data.items;
 			
 			self.ui.updateLootWindow();
@@ -202,7 +201,6 @@ export default class Game extends Phaser.Scene {
 	}
   
   	toggleAttacking() {
-      	console.log("emit toggleAttacking");
     	this.socket.emit('toggleAttacking');  
     }
 	
@@ -216,7 +214,6 @@ export default class Game extends Phaser.Scene {
     }
 
     useAction(self) {
-        console.log('game.js: useAction')
         if (self.player.target && self.corpses[self.player.target.id]) {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }

@@ -50,13 +50,11 @@ export default class Button extends Phaser.GameObjects.Rectangle {
       
       let self=this;
       this.on('pointerdown', function (_,__,___, event) {    
-        console.log(toggle);
         if (toggle===1)
             self.toggleSelected();
         else if (toggle===0)
             self.select();    
         onButtonDown.forEach( function (callback) {
-           console.log(callback);
           if (callback.emit)
               self.scene.socket.emit(callback.emit);
           if (callback.func) {
@@ -78,7 +76,6 @@ export default class Button extends Phaser.GameObjects.Rectangle {
                  self.scene.socket.emit(callback.emit);
            if (callback.func) {
              if (Object.keys(callback).includes('arg')) {
-                console.log(arg);
                 callback.func(callback.arg);
              }
              else

@@ -40,7 +40,6 @@ export default class UI {
   }
   
   toggleInventoryWindow(self) {
-    console.log('ui: toggle');
     self.inventoryWindow.toggleVisible();
   }
 
@@ -50,13 +49,6 @@ export default class UI {
         this.attackBtn.select();
       else
         this.attackBtn.deselect();
-  }
-
-
-  //Remove this function?
-  openLootWindow(corpseId) {
-    console.log('UI: Should open corpse window for corpse: '+corpseId);
-
   }
   
   setupActionButtons() {
@@ -167,7 +159,6 @@ export default class UI {
   openLootWindowFromData(data) {
       if (this.lootWindow) this.lootWindow.close();
 
-      console.log(data);
       const slots={};
       for (const [i,item] of Object.entries(data.items)) {
           slots[`corpse${Number(i) + 1}`]=item;

@@ -146,7 +146,6 @@ export default class InventoryWindow {
   }
   
   toggleVisible() {
-    console.log('invWin: toggle');
     this.visible ? this.hide() : this.show();
   }
 
