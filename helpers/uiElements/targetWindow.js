@@ -34,7 +34,7 @@ export default class TargetWindow extends Window {
   	if (this.player.target) {
 			this.targetLabel.setText(this.player.target.name);
 			const hpString = this.player.target.type==='character'?`${this.player.target.hp}/${this.player.target.maxHp}`:"";
-  			this.targetHpLabel.setText(`${this.player.target.hp}/${this.player.target.maxHp}`);
+  			this.targetHpLabel.setText(hpString);
   		}
   		else {
   			this.targetLabel.setText('No target');
