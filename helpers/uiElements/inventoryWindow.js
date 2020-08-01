@@ -119,6 +119,8 @@ export default class InventoryWindow {
         container=this.inventorySlots;
       
       container[slot].updateItem();
+      if (!this.visible)
+        slot.hide();
      
     }
   }
