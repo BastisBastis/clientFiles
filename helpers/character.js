@@ -52,6 +52,7 @@ export default class Character {
         this.experience=experience;
         this.equipmentSlots = equipmentSlots;
         this.inventorySlots = inventorySlots;
+        this.type = 'character';
             
         
         //Set up visible graphics

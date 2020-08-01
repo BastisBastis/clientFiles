@@ -16,7 +16,8 @@ export default class Corpse {
 		this.y=y;
       	this.name=name;
       	this.id = id;
-        this.items=items;
+		this.items=items;
+		this.type = 'corpse';
       	if (this.sprite.width>this.sprite.height)
           this.sprite.setScale(spriteMaxWidth/this.sprite.width);
       	else
