@@ -11,7 +11,7 @@ export default class PlayerWindow extends Window {
     //const labelYMargin = 10;
     //const labelXMargin = 5;
     const height=8*UIConst.lineSpacing+UIConst.labelYMargin*2;
-    const width= 150;
+    const width= 250;
 
     const x = scene.cameras.main.width-width;
     const y = 0;

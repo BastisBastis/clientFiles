@@ -27,7 +27,6 @@ export default class LootWindow extends Window {
         this.corpseId = corpseId || 'someId';
         this.corpseName = corpseName || 'a corpse';
         
-        console.log(items);
         this.items = items;
         this.scene=scene;
           
