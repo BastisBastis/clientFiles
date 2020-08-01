@@ -120,7 +120,7 @@ export default class InventoryWindow {
       
       container[slot].updateItem();
       if (!this.visible)
-        slot.hide();
+        container[slot].hide();
      
     }
   }
