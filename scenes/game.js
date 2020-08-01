@@ -218,7 +218,7 @@ export default class Game extends Phaser.Scene {
     useAction(self) {
         console.log('game.js: useAction')
         if (self.player.target && self.corpses[self.player.target.id]) {
-            self.socket.emit('requestCorpseLooting',self.player.target.id);          	
+            self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }
         
             
