@@ -2,13 +2,16 @@ import * as UIConst from './uiConstants';
 import Window from './window';
 
 export default class ChatWindow extends Window {
-    constructor ({scene}) {
+    constructor (scene) {
         
         const width = scene.cameras.main.width-300;
         const height = 200;
         const x = 0;
-        const y = scene.cameras.main.height-width;
+        const y = scene.cameras.main.height-height;
         
+        console.log(width,height,x,y);
+        
+        /*
         super({
             scene:scene,
             x:x,
@@ -17,7 +20,7 @@ export default class ChatWindow extends Window {
             height:height
         });
         
-        
+        */
         
         
         
