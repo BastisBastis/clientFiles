@@ -15,7 +15,7 @@ export default class ChatWindow extends Window {
             y:y,
             width:width,
             height:height
-        }});
+        });
         
         
         
