@@ -3,6 +3,7 @@ import PlayerWindow from './uiElements/playerWindow';
 import TargetWindow from './uiElements/targetWindow';
 import InventoryWindow from './uiElements/inventoryWindow';
 import LootWindow from './uiElements/lootWindow';
+import ChatWindow from './uiElements/chatWindow';
 
 export default class UI { 
  	constructor (scene, player) {
@@ -18,7 +19,7 @@ export default class UI {
       	this.inventoryWindow = new InventoryWindow(scene, player,100,200);
         
         this.lootWindown= false;
-      	
+      	this.chatWindow = new ChatWindow(scene)
     }
     
   update () { 
