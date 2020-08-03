@@ -14,7 +14,7 @@ export default class ChatWindow extends Window {
         super({
             scene:scene,
             x:x+width/2,
-            y:y-height/2,
+            y:y+height/2,
             width:width,
             height:height
         });
