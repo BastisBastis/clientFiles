@@ -17,6 +17,9 @@ const config = {
             debug: false
         }
     },
+    dom: {
+        createContainer: true
+    },
     scene: [
         Game
     ]
