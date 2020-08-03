@@ -20,7 +20,7 @@ export default class ChatWindow extends Window {
         });
         
         const inputHeight=20;
-        const messageBoxStyle = `background-color:black; width: ${width}; height: ${height-inputHeight};`
+        const messageBoxStyle = `background-color:white; width: ${width}px; height: ${height-inputHeight}px;`
         
         this.messageBox = scene.add.dom(x,y,'div',messageBoxStyle,'Chatbox');
         
