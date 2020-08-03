@@ -19,7 +19,7 @@ export default class UI {
       	this.inventoryWindow = new InventoryWindow(scene, player,100,200);
         
         this.lootWindown= false;
-      	//this.chatWindow = new ChatWindow(scene);
+      	this.chatWindow = new ChatWindow(scene);
     }
     
   update () { 
