@@ -19,10 +19,13 @@ export default class ChatWindow extends Window {
             height:height
         });
         
+        const inputHeight=20;
         
+        this.messageBox = document.createElement('div');
+        this.messageBox.style=`background-color:black; width: ${width}; height: ${height-inputHeight};`
+        this.messageBox.innerText:'Chatbox';
         
-        
-        
+         
     }
     
     
