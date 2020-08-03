@@ -221,6 +221,7 @@ export default class Game extends Phaser.Scene {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }
         
+        self.ui.chatWindow.addMessage('Button pressed');
             
     }
 	
