@@ -9,7 +9,6 @@ export default class ChatWindow extends Window {
         const x = 0;
         const y = scene.cameras.main.height-height;
         
-        console.log(width,height,x,y,scene);
         
         super({
             scene:scene,
@@ -19,6 +18,8 @@ export default class ChatWindow extends Window {
             height:height
         });
         
+        this.chatLog='Chatbox';
+        
         const inputHeight=20;
         const messageBoxStyle = `box-sizing: border-box; background-color:transparent; width: ${width}px; height: ${height-inputHeight}px;`
         
@@ -27,7 +28,9 @@ export default class ChatWindow extends Window {
     }
     
     addMessage(message) {
-        this.messageBox.setText(this.messageBox.innerText+'<br>'+message);
+        
+        this.chatLog+='<br>'+message;
+        this.messageBox.setHTML(this.chatLog);
     }
     
     
