@@ -9,8 +9,7 @@ export default class ChatWindow extends Window {
         const x = 0;
         const y = scene.cameras.main.height-height;
         
-        console.log(width,height,x,y);
-        
+        console.log(width,height,x,y,scene);
         /*
         super({
             scene:scene,
@@ -19,8 +18,8 @@ export default class ChatWindow extends Window {
             width:width,
             height:height
         });
-        
         */
+        
         
         
         
