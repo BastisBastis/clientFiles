@@ -44,9 +44,7 @@ export default class ChatWindow extends Window {
     
     printObject(object,name = '', indention='') {
         
-        if (true) {
-            this.addMessage('blha' +object.prototype.toString());
-            return
+        this.addMessage(typeof object);
             
         }
         const type = typeof object;
