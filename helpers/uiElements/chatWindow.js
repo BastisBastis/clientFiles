@@ -40,5 +40,26 @@ export default class ChatWindow extends Window {
         this.messageBox.setHTML(this.chatLog);
     }
     
+    printObject(object,name) {
+        const type = typeof object;
+        if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
+            this.addMessage(name+':',object)
+        else if (object.constructor == Object) {
+            //Dictionary
+            this.addMessage(name+' (dictionary)';
+            for (const [key,value] of Object.entries(object)) 
+                printObject(value,key);
+        }
+        else if (object instanceof Array) {
+            //Array
+            this.addMessage(name+' (array)';
+            for (const [key,value] of Object.entries(object)) 
+                printObject(value,key);
+        }
+        else
+            this.addMessage(name +' ('+typeof object+')');
+            
+        
+    }
     
 }
