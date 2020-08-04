@@ -221,7 +221,7 @@ export default class Game extends Phaser.Scene {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }
         
-        self.debugPrint([1,2,3,{a:22,b:33}]);
+        self.debugPrint(self.player);
             
     }
 	
