@@ -42,7 +42,7 @@ export default class ChatWindow extends Window {
     
     
     
-    printObject(object,name = '', indention='-') {
+    printObject(object,name = '', indention='') {
         const type = typeof object;
         if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
             this.addMessage(indention+name+': '+object)
