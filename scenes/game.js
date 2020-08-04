@@ -221,7 +221,7 @@ export default class Game extends Phaser.Scene {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }
         
-        self.ui.chatWindow.addMessage('Button pressed');
+        self.debugPrint('String');
             
     }
 	
@@ -248,8 +248,9 @@ export default class Game extends Phaser.Scene {
 		}
 	}
 	
-	setDebugText(str) {
-		this.lbl.setText(str)
+	debugPrint(message,self) {
+	    self = self || this;
+	    self.ui.chatWindow.printObject(message);
 	}
 
 	update(time, delta) {
