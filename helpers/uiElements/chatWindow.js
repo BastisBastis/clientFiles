@@ -45,7 +45,7 @@ export default class ChatWindow extends Window {
     printObject(object,name = '', indention='') {
         
         if (true) {
-            this.addMessage('blha' +JSON.stringify(object));
+            this.addMessage('blha' +String(object));
             return
             
         }
