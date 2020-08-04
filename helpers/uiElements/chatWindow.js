@@ -40,10 +40,12 @@ export default class ChatWindow extends Window {
         this.messageBox.setHTML(this.chatLog);
     }
     
-    printObject(object,name) {
+    
+    
+    printObject(object,name = '') {
         const type = typeof object;
         if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
-            this.addMessage(name+':',object)
+            this.addMessage(name+': '+object)
         else if (object.constructor == Object) {
             //Dictionary
             this.addMessage(name+' (dictionary)');
