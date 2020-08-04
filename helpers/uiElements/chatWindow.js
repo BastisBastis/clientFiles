@@ -42,7 +42,7 @@ export default class ChatWindow extends Window {
     
     
     
-    printObject(object,name = '', indention='') {
+    printObject(object,name = '', indention='-') {
         const type = typeof object;
         if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
             this.addMessage(indention+name+': '+object)
@@ -50,7 +50,7 @@ export default class ChatWindow extends Window {
             //Dictionary
             this.addMessage(indention+name+' (dictionary)');
             for (const [key,value] of Object.entries(object)) 
-                this.printObject(value,key,indention+'  ');
+                this.printObject(value,key,indention+'--');
         }
         else if (object instanceof Array) {
             //Array
