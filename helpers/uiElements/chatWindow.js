@@ -50,13 +50,13 @@ export default class ChatWindow extends Window {
             //Dictionary
             this.addMessage(name+' (dictionary)');
             for (const [key,value] of Object.entries(object)) 
-                printObject(value,key);
+                this.printObject(value,key);
         }
         else if (object instanceof Array) {
             //Array
             this.addMessage(name+' (array)');
             for (const [key,value] of Object.entries(object)) 
-                printObject(value,key);
+                this.printObject(value,key);
         }
         else
             this.addMessage(name +' ('+typeof object+')');
