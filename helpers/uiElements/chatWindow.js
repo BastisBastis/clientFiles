@@ -46,7 +46,7 @@ export default class ChatWindow extends Window {
         
         this.addMessage(typeof object);
             
-        }
+        
         const type = typeof object;
         if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
             this.addMessage(indention+name+': '+object)
