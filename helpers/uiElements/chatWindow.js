@@ -42,24 +42,24 @@ export default class ChatWindow extends Window {
     
     
     
-    printObject(object,name = '') {
+    printObject(object,name = '', indention='') {
         const type = typeof object;
         if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
-            this.addMessage(name+': '+object)
+            this.addMessage(indention+name+': '+object)
         else if (object.constructor == Object) {
             //Dictionary
-            this.addMessage(name+' (dictionary)');
+            this.addMessage(indention+name+' (dictionary)');
             for (const [key,value] of Object.entries(object)) 
-                this.printObject(value,key);
+                this.printObject(value,key,indention+'  ');
         }
         else if (object instanceof Array) {
             //Array
-            this.addMessage(name+' (array)');
+            this.addMessage(indention+name+' (array)');
             for (const [key,value] of Object.entries(object)) 
-                this.printObject(value,key);
+                this.printObject(value,key,indention+'  ');
         }
         else
-            this.addMessage(name +' ('+typeof object+')');
+            this.addMessage(indention+name +' ('+typeof object+')');
             
         
     }
