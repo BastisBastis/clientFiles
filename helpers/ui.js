@@ -151,6 +151,10 @@ export default class UI {
  		
   }
   
+  addMessage(message) {
+      this.chatWindow.addMessage(message);
+  }
+  
   updateLootWindow() {
       if (this.lootWindow) {
           this.lootWindow.updateItems();

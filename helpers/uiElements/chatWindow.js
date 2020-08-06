@@ -18,7 +18,7 @@ export default class ChatWindow extends Window {
             height:height
         });
         
-        this.chatLog='Chatbox';
+        this.chatLog='';
         
         const inputHeight=20;
         const messageBoxStyle = `
@@ -30,7 +30,7 @@ export default class ChatWindow extends Window {
             margin: 0px 10px;
             `
         
-        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'Chatbox');
+        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'');
         
     }
     

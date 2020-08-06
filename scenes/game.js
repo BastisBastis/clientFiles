@@ -72,18 +72,22 @@ export default class Game extends Phaser.Scene {
           //Controls
           self.controller = new Controller(self);
           self.loading = false;
+          self.ui.addMessage('Game loaded');
         });
       
         this.socket.on('newCharacter', function (charData) {
         	self.characters[charData.id] = self.getNewCharacterFromData(charData); 
+        	self.ui.addMessage(charData.name+ ' appeared');
         });
       
       	this.socket.on('characterRespawned', function (id) {
         	self.characters[id].respawn(); 
+        	self.ui.addMessage(self.ui.characters[id].name+' respawned');
 		});
 		
 		this.socket.on('message', (message) => {
-			console.log(message);
+			//console.log(message);
+			self.ui.addMessage(message);
 		});
       
       	this.socket.on('newCorpse', function(data) {
@@ -220,8 +224,6 @@ export default class Game extends Phaser.Scene {
         if (self.player.target && self.corpses[self.player.target.id]) {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
         }
-        
-        self.debugPrint(self.characters);
             
     }
 	
