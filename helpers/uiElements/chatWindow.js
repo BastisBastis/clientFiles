@@ -44,12 +44,14 @@ export default class ChatWindow extends Window {
     
     printObject(object,name = '', indention='') {
         
-        this.addMessage(object.constructor.name);
+        //this.addMessage(object.constructor.name);
             
         
         const type = typeof object;
-        if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol')
+        if (type == 'string' || type == 'number' || type == 'bigint' || type == 'boolean' || type == 'symbol' || type=='undefined')
             this.addMessage(indention+name+': '+object)
+        else if (object == null)
+            this.addMessage(indention+name+': '+'null');
         else if (object.constructor == Object) {
             //Dictionary
             this.addMessage(indention+name+' (dictionary)');
@@ -61,6 +63,13 @@ export default class ChatWindow extends Window {
             this.addMessage(indention+name+' (array)');
             for (const [key,value] of Object.entries(object)) 
                 this.printObject(value,key,indention+'--');
+        }
+        else if (type == 'object') {
+            this.addMessage(indention+name+' ('+object.constructor.name+')');
+            for (const [key,value] of Object.entries(object)) {
+                this.printObject(value,key,indention+'--');
+            }
+            
         }
         else
             this.addMessage(indention+name +' ('+typeof object+')');
