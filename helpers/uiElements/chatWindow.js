@@ -66,10 +66,6 @@ export default class ChatWindow extends Window {
         }
         else if (type == 'object') {
             this.addMessage(indention+name+' ('+object.constructor.name+')');
-            for (const [key,value] of Object.entries(object)) {
-                console.log();
-                //this.printObject(value,key,indention+'--');
-            }
             
         }
         else
