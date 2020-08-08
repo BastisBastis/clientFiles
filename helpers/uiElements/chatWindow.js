@@ -30,9 +30,9 @@ export default class ChatWindow extends Window {
             margin: 0px 10px;
             `
         
-        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'');
+        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0);
         
-        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine');
+        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
         this.addMessage(width);
     }
     
