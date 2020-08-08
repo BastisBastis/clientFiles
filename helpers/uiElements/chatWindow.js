@@ -36,7 +36,8 @@ export default class ChatWindow extends Window {
         this.currTap = false;
         this.messageBox.on('pointerDown', (pointer, x, y, event) => {
             event.stopPropragation();
-            self.chatLine.getChildByName('chatLine').focus();
+            scene.printDebug("hepp");
+            
         });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
