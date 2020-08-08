@@ -35,8 +35,22 @@ export default class ChatWindow extends Window {
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
         this.currTap = false;
         this.messageBox.addListener('click');
-        this.messageBox.on('click', function (pointer, x, y, event) {
-            console.log(pointer, x, y, event);
+        this.messageBox.on('click', function (event) {
+            console.log(event.x, event.y);
+            if (!self.currTap)
+                self.currTap={x:event.x, y:event.y, time:new Date().getTime()};
+            else {
+                const releaseTime = new Date().getTime();
+                if (releaseTime - currTouch.time > 500)
+                    return;
+                if (Math.abs(event.x-self.currTouch.x) > 50)
+                    return;
+                if (Math.abs(event.y - self.currTouch.y) > 50)
+                    return;
+                self.addMessage('tap');
+
+            }
+
         });  
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
