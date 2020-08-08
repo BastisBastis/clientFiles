@@ -1,0 +1,5 @@
+Add getters for total stats including items in character
+
+Update ui with total stats
+
+start looking at 3d graphics

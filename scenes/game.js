@@ -27,6 +27,7 @@ export default class Game extends Phaser.Scene {
         this.load.image('redArrow', 'src/assets/redArrow.png');
       	this.load.image('sword_1', 'src/assets/sword.png');
       	this.load.image('cross', 'src/assets/cross.png');
+      	this.load.html('chatLine', 'src/assets/chatLine.html');
 	}
 
 	create() {
