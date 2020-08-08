@@ -37,8 +37,10 @@ export default class ChatWindow extends Window {
     }
     
     addMessage(message) {
-        
-        this.chatLog+='<br>'+message;
+        if (this.chatLog.length > 0)
+            this.chatLog+='<br>'+message;
+        else
+            this.chatLog+=message;
         this.messageBox.setHTML(this.chatLog);
         
         
