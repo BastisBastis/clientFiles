@@ -33,20 +33,35 @@ export default class ChatWindow extends Window {
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0);
         
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
-        this.addMessage(width);
+        
+        let self = this;
+        this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+              // Cancel the default action, if needed
+              event.preventDefault();
+              self.submitMessage(self)
+            }
+          });
     }
     
     addMessage(message) {
         if (this.chatLog.length > 0)
             this.chatLog+='<br>'+message;
         else
-            this.chatLog+=message;
+            this.chatLog+=message; 
         this.messageBox.setHTML(this.chatLog);
         
         
     }
     
-    
+    submitMessage(self) {
+        const message = self.chatLine.getChildByName('chatLine').value;
+        if (message.length > 0) {
+            self.addMessage(message);
+        }
+        self.chatLine.getChildByName('chatLine').blur;
+    }
     
     printObject(object,name = '', indention='') {
         
