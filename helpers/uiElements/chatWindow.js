@@ -32,8 +32,8 @@ export default class ChatWindow extends Window {
         
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'');
         
-        this.chatLine = scene.add.dom(0,200).createFromCache('chatLine');
-        
+        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine');
+        this.addMessage(width);
     }
     
     addMessage(message) {
