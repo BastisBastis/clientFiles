@@ -62,7 +62,7 @@ export default class ChatWindow extends Window {
         }
         self.chatLine.getChildByName('chatLine').blur;
         self.chatLine.getChildByName('chatLine').value = "";
-        self.chatLine.focus();
+        self.messageBox.children[0].focus();
     }
     
     printObject(object,name = '', indention='') {
