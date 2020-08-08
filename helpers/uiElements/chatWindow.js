@@ -39,7 +39,7 @@ export default class ChatWindow extends Window {
         this.chatLog+='<br>'+message;
         this.messageBox.setHTML(this.chatLog);
         
-        this.chatLine = scene.add.dom(0,y+height-inputHeight/2).createFromCache('chatLine');
+        this.chatLine = scene.add.dom(0,200).createFromCache('chatLine');
     }
     
     
