@@ -41,11 +41,11 @@ export default class ChatWindow extends Window {
                 self.currTap={x:event.x, y:event.y, time:new Date().getTime()};
             else {
                 const releaseTime = new Date().getTime();
-                if (releaseTime - self.currTouch.time > 500)
+                if (releaseTime - self.currTap.time > 500)
                     return;
-                if (Math.abs(event.x-self.currTouch.x) > 50)
+                if (Math.abs(event.x-self.currTap.x) > 50)
                     return;
-                if (Math.abs(event.y - self.currTouch.y) > 50)
+                if (Math.abs(event.y - self.currTap.y) > 50)
                     return;
                 self.addMessage('tap');
 
