@@ -40,7 +40,7 @@ export default class ChatWindow extends Window {
             if (event.keyCode === 13) {
               // Cancel the default action, if needed
               event.preventDefault();
-              self.submitMessage(self)
+              self.submitInputLine(self)
             }
           });
     }
@@ -55,12 +55,13 @@ export default class ChatWindow extends Window {
         
     }
     
-    submitMessage(self) {
+    submitInputLine(self) {
         const message = self.chatLine.getChildByName('chatLine').value;
         if (message.length > 0) {
             self.addMessage(message);
         }
         self.chatLine.getChildByName('chatLine').blur;
+        self.chatLine.getChildByName('chatLine').value = "";
     }
     
     printObject(object,name = '', indention='') {
