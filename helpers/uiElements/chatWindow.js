@@ -30,11 +30,17 @@ export default class ChatWindow extends Window {
             margin: 0px 10px;
             `
         
-        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0);
-        
+        let self = this;
+
+        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
+        this.currTap = false;
+        this.messageBox.on('pointerDown', (pointer, x, y, event) => {
+            event.stopPropragation();
+            self.chatLine.getChildByName('chatLine').focus();
+        });
+
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
         
-        let self = this;
         this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
             if (event.keyCode === 13) {
