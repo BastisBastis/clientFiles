@@ -34,11 +34,10 @@ export default class ChatWindow extends Window {
 
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
         this.currTap = false;
-        this.messageBox.on('pointerDown', function(pointer, x, y, event) {
-            event.stopPropragation();
-            scene.printDebug("hepp");
-
-        });
+        this.messageBox.addListener('click');
+        this.messageBox.on('click', function (pointer, x, y, event) {
+            console.log(pointer, x, y, event);
+        });  
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
         
@@ -52,6 +51,8 @@ export default class ChatWindow extends Window {
           });
     }
     
+    
+
     addMessage(message) {
         if (this.chatLog.length > 0)
             this.chatLog+='<br>'+message;
