@@ -60,9 +60,9 @@ export default class ChatWindow extends Window {
         if (message.length > 0) {
             self.addMessage(message);
         }
-        self.chatLine.getChildByName('chatLine').blur;
+        self.chatLine.getChildByName('chatLine').blur();
         self.chatLine.getChildByName('chatLine').value = "";
-        self.chatLine.getChildByName('focusTaker').focus();
+        
     }
     
     printObject(object,name = '', indention='') {
