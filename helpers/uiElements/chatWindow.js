@@ -44,7 +44,7 @@ export default class ChatWindow extends Window {
             if (tapTimer)
                 clearTimeout(tapTimer);
             
-            tapTimer = setTimeout(() => (
+            tapTimer = setTimeout(() => {
                 tapTimer=false;
                 if (currTap)
                     currTap.tap=false;
