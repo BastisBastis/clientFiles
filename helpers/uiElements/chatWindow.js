@@ -33,25 +33,42 @@ export default class ChatWindow extends Window {
         let self = this;
 
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
-        this.currTap = false;
-        this.messageBox.addListener('click');
-        this.messageBox.on('click', function (event) {
+        let currTap = false;
+        let tapTimer = false;
+        const tapTime=500;
+        this.messageBox.addListener('pointerdown');
+        this.messageBox.addListener('pointerup');
+        this.messageBox.on('pointerdown', function (event) {
             console.log(event.x, event.y);
-            if (!self.currTap)
-                self.currTap={x:event.x, y:event.y, time:new Date().getTime()};
-            else {
-                const releaseTime = new Date().getTime();
-                if (releaseTime - self.currTap.time > 500)
-                    return;
-                if (Math.abs(event.x-self.currTap.x) > 50)
-                    return;
-                if (Math.abs(event.y - self.currTap.y) > 50)
-                    return;
-                self.addMessage('tap');
-
-            }
-
+            
+            if (tapTimer)
+                clearTimeout(tapTimer);
+            
+            tapTimer = setTimeout(() => (
+                tapTimer=false;
+                if (currTap)
+                    currTap.tap=false;
+            },tapTime);
+            
+            currTap = {
+                tap:true,
+                x:event.x,
+                y:event.y
+                };
+            
+                
         });  
+        this.messageBox.on('pointerup', (event) => {
+            if (tapTimer) {
+                clearTimeout(tapTimer);
+                tapTimer=false;
+            }
+            if (!currTap.tap)
+                return;
+                
+            this.addMessage('tap');
+            
+        });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
         
