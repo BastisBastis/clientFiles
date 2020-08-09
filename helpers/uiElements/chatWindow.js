@@ -66,7 +66,7 @@ export default class ChatWindow extends Window {
             if (!currTap.tap)
                 return;
                 
-            this.addMessage('tap');
+            self.chatLine.getChildByName('chatLine').focus();
             
         });
 
