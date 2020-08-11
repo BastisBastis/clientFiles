@@ -15,7 +15,8 @@ export default class ChatWindow extends Window {
             x:x+width/2,
             y:y+height/2,
             width:width,
-            height:height
+            height:height,
+            alpha:1.0
         });
         
         this.chatLog='';
