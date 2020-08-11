@@ -4,7 +4,7 @@ import Window from './window';
 export default class ChatWindow extends Window {
     constructor (scene) {
         
-        const width = scene.cameras.main.width-300;
+        const width = scene.cameras.main.width-300 - 10;
         const height = 200;
         const x = 0;
         const y = scene.cameras.main.height-height;
