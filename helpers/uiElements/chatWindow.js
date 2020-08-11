@@ -15,8 +15,7 @@ export default class ChatWindow extends Window {
             x:x+width/2,
             y:y+height/2,
             width:width,
-            height:height,
-            alpha:1.0
+            height:height
         });
         
         this.chatLog='';
@@ -26,7 +25,7 @@ export default class ChatWindow extends Window {
             box-sizing: border-box; 
             background-color:transparent; 
             overflow-y:auto; 
-            width: 500px; 
+            width: ${width}px; 
             height: ${height-inputHeight}px;
             margin: 0px 10px;
             `
@@ -34,6 +33,8 @@ export default class ChatWindow extends Window {
         let self = this;
 
         this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
+        console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
+
         let currTap = false;
         let tapTimer = false;
         const tapTime=500;
