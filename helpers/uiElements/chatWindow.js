@@ -65,8 +65,9 @@ export default class ChatWindow extends Window {
             }
             if (!currTap.tap)
                 return;
-                
+                 
             self.chatLine.getChildByName('chatLine').click();
+            self.chatLine.getChildByName('chatLine').focus();
             
         });
 
