@@ -4,7 +4,7 @@ import Window from './window';
 export default class ChatWindow extends Window {
     constructor (scene) {
         
-        const width = scene.cameras.main.width-300 - 10;
+        const width = scene.cameras.main.width-300;
         const height = 200;
         const x = 0;
         const y = scene.cameras.main.height-height;
@@ -26,7 +26,7 @@ export default class ChatWindow extends Window {
             box-sizing: border-box; 
             background-color:transparent; 
             overflow-y:auto; 
-            width: ${width}px; 
+            width: 500px; 
             height: ${height-inputHeight}px;
             margin: 0px 10px;
             `
