@@ -41,7 +41,8 @@ export default class ChatWindow extends Window {
         this.messageBox.addListener('pointerdown');
         this.messageBox.addListener('pointerup');
         this.messageBox.on('pointerdown', function (event) {
-            console.log(event.x, event.y);
+            if (event.x > width)
+                return;
             
             if (tapTimer)
                 clearTimeout(tapTimer);
@@ -61,6 +62,8 @@ export default class ChatWindow extends Window {
                 
         });  
         this.messageBox.on('pointerup', (event) => {
+            if (event.x > width)
+                return;
             if (tapTimer) {
                 clearTimeout(tapTimer);
                 tapTimer=false;
