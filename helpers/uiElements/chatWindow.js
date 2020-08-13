@@ -63,6 +63,7 @@ export default class ChatWindow extends Window {
                 
         });  
         this.messageBox.on('pointerup', (event) => {
+            event.preventDefault();
             if (event.x > width)
                 return;
             if (tapTimer) {
