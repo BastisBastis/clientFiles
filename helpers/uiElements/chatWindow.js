@@ -32,57 +32,53 @@ export default class ChatWindow extends Window {
         
         let self = this;
 
-        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
-        console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
+        // this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
+        // console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
 
-        let currTap = false;
-        let tapTimer = false;
-        const tapTime=500;
-        this.messageBox.addListener('pointerdown');
-        this.messageBox.addListener('pointerup');
-        this.messageBox.on('pointerdown', function (event) {
-            if (event.x > width)
-                return;
+        // let currTap = false;
+        // let tapTimer = false;
+        // const tapTime=500;
+        // this.messageBox.addListener('pointerdown');
+        // this.messageBox.addListener('pointerup');
+        // this.messageBox.on('pointerdown', function (event) {
+        //     if (event.x > width)
+        //         return;
             
-            if (tapTimer)
-                clearTimeout(tapTimer);
+        //     if (tapTimer)
+        //         clearTimeout(tapTimer);
             
-            tapTimer = setTimeout(() => {
-                tapTimer=false;
-                if (currTap)
-                    currTap.tap=false;
-            },tapTime);
+        //     tapTimer = setTimeout(() => {
+        //         tapTimer=false;
+        //         if (currTap)
+        //             currTap.tap=false;
+        //     },tapTime);
             
-            currTap = {
-                tap:true,
-                x:event.x,
-                y:event.y
-                };
+        //     currTap = {
+        //         tap:true,
+        //         x:event.x,
+        //         y:event.y
+        //         };
             
                 
-        });  
-        this.messageBox.on('pointerup', (event) => {
-            if (event.x > width)
-                return;
-            if (tapTimer) {
-                clearTimeout(tapTimer);
-                tapTimer=false;
-            }
-            if (!currTap.tap)
-                return;
+        // });  
+        // this.messageBox.on('pointerup', (event) => {
+        //     if (event.x > width)
+        //         return;
+        //     if (tapTimer) {
+        //         clearTimeout(tapTimer);
+        //         tapTimer=false;
+        //     }
+        //     if (!currTap.tap)
+        //         return;
                  
-            self.chatLine.getChildByName('chatLine').click();
-            self.chatLine.getChildByName('chatLine').focus();
+        //     self.chatLine.getChildByName('chatLine').click();
+        //     self.chatLine.getChildByName('chatLine').focus();
             
-        });
+        // });
 
-        /*
-        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2, 'div', 'box-sizing:border-box; padding:0px; width:500px; margin:0px;', '');
-        this.chatLine.setHTML('<input type="text" name="chatLine" placeholder="" style="font-size: 20px; width:500px; height: 20px; box-sizing:border-box; margin:0; padding:0px 4px; border: solid 1px #000; border-radius:0px;">'); 
-        //this.printObject(window.getComputedStyle(this.chatLine).getPropertyValue('width'));
+        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
+        this.printObject(window.getComputedStyle(this.messageBox.getChildByName('messageBox'), null).getPropertyValue('font-size'));
         
-        
-        this.printObject(self.chatLine.width);
         this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
             if (event.keyCode === 13) {
@@ -91,7 +87,6 @@ export default class ChatWindow extends Window {
               self.submitInputLine(self)
             }
           });
-          */
     }
     
     
