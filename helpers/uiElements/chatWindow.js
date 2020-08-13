@@ -99,7 +99,7 @@ export default class ChatWindow extends Window {
         else
             this.chatLog+=message; 
         this.messageBox.setHTML(this.chatLog);
-        this.messageBox.scrollIntoView(false);
+        this.messageBox.node.scrollIntoView(false);
         
         
     }
