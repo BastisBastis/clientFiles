@@ -23,7 +23,7 @@ export default class ChatWindow extends Window {
         const inputHeight=20;
         const messageBoxStyle = `
             box-sizing: border-box; 
-            background-color:blue;  
+            background-color:transparent;  
             overflow-y:auto; 
             width: ${width-10}px;
             height: ${height-inputHeight}px;
@@ -79,7 +79,7 @@ export default class ChatWindow extends Window {
         });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
-        this.printObject(window.getComputedStyle(this.messageBox.getChildByName('messageBox'), null).getPropertyValue('font-size'));
+        //this.printObject(window.getComputedStyle(this.messageBox.getChildByName('messageBox'), null).getPropertyValue('font-size'));
         
         this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
