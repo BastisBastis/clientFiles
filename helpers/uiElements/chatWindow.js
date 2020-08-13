@@ -96,7 +96,7 @@ export default class ChatWindow extends Window {
                     setTimeout(() => {
 
                         // now we can focus on the target input
-                        self.chatLine.getChildByName('chatLine').focus()
+                        self.chatLine.getChildByName('chatLine').click()
 
                         // cleanup
                         fakeInput.remove()
