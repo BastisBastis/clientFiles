@@ -23,7 +23,7 @@ export default class ChatWindow extends Window {
         const inputHeight=20;
         const messageBoxStyle = `
             box-sizing: border-box; 
-            background-color:transparent; 
+            background-color:blue;  
             overflow-y:auto; 
             width: ${width}px; 
             height: ${height-inputHeight}px;
@@ -32,49 +32,49 @@ export default class ChatWindow extends Window {
         
         let self = this;
 
-        // this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
-        // console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
+        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0).setInteractive();
+        console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
 
-        // let currTap = false;
-        // let tapTimer = false;
-        // const tapTime=500;
-        // this.messageBox.addListener('pointerdown');
-        // this.messageBox.addListener('pointerup');
-        // this.messageBox.on('pointerdown', function (event) {
-        //     if (event.x > width)
-        //         return;
+        let currTap = false;
+        let tapTimer = false;
+        const tapTime=500;
+        this.messageBox.addListener('pointerdown');
+        this.messageBox.addListener('pointerup');
+        this.messageBox.on('pointerdown', function (event) {
+            if (event.x > width)
+                return;
             
-        //     if (tapTimer)
-        //         clearTimeout(tapTimer);
+            if (tapTimer)
+                clearTimeout(tapTimer);
             
-        //     tapTimer = setTimeout(() => {
-        //         tapTimer=false;
-        //         if (currTap)
-        //             currTap.tap=false;
-        //     },tapTime);
+            tapTimer = setTimeout(() => {
+                tapTimer=false;
+                if (currTap)
+                    currTap.tap=false;
+            },tapTime);
             
-        //     currTap = {
-        //         tap:true,
-        //         x:event.x,
-        //         y:event.y
-        //         };
+            currTap = {
+                tap:true,
+                x:event.x,
+                y:event.y
+                };
             
                 
-        // });  
-        // this.messageBox.on('pointerup', (event) => {
-        //     if (event.x > width)
-        //         return;
-        //     if (tapTimer) {
-        //         clearTimeout(tapTimer);
-        //         tapTimer=false;
-        //     }
-        //     if (!currTap.tap)
-        //         return;
+        });  
+        this.messageBox.on('pointerup', (event) => {
+            if (event.x > width)
+                return;
+            if (tapTimer) {
+                clearTimeout(tapTimer);
+                tapTimer=false;
+            }
+            if (!currTap.tap)
+                return;
                  
-        //     self.chatLine.getChildByName('chatLine').click();
-        //     self.chatLine.getChildByName('chatLine').focus();
+            self.chatLine.getChildByName('chatLine').click();
+            self.chatLine.getChildByName('chatLine').focus();
             
-        // });
+        });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
         this.printObject(window.getComputedStyle(this.messageBox.getChildByName('messageBox'), null).getPropertyValue('font-size'));
