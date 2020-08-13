@@ -77,8 +77,8 @@ export default class ChatWindow extends Window {
         });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
-        this.printObject(window.getComputedStyle(this.chatLine).getPropertyValue('width'));
-        
+        //this.printObject(window.getComputedStyle(this.chatLine).getPropertyValue('width'));
+        this.printObject(self.chatLine.width);
         this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
             if (event.keyCode === 13) {
