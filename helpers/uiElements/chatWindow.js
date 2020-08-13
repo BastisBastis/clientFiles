@@ -76,8 +76,8 @@ export default class ChatWindow extends Window {
             
         });
 
-        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2, 'div', 'box-sizing:border-box; width:500px; margin:0px;').createFromCache('chatLine').setScrollFactor(0);
-        this.chatLine.setInteractive();
+        this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2, 'div', 'box-sizing:border-box; padding:0px; width:500px; margin:0px;', '');
+        this.chatLine.setHTML('<input type="text" name="chatLine" placeholder="" style="font-size: 20px; width:500px; height: 20px; box-sizing:border-box; margin:0; padding:0px 4px; border: solid 1px #000; border-radius:0px;">'); 
         //this.printObject(window.getComputedStyle(this.chatLine).getPropertyValue('width'));
         
         
