@@ -25,9 +25,11 @@ export default class ChatWindow extends Window {
             box-sizing: border-box; 
             background-color:blue;  
             overflow-y:auto; 
-            width: ${width-10}px; 
+            //width: ${width-10}px; 
+            width: 100%;
             height: ${height-inputHeight}px;
             margin: 0 10px;
+            border
             `;
         
         let self = this;
