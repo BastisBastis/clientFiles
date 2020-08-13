@@ -35,7 +35,6 @@ export default class ChatWindow extends Window {
         let self = this;
 
         this.messageBox = scene.add.dom(x+width/2,y+(height-inputHeight)/2,'div',messageBoxStyle,'').setScrollFactor(0);
-        console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
 
         let currTap = false;
         let tapTimer = false;
@@ -79,7 +78,6 @@ export default class ChatWindow extends Window {
         });
 
         this.chatLine = scene.add.dom(width/2,y+height-inputHeight/2).createFromCache('chatLine').setScrollFactor(0);
-        //this.printObject(window.getComputedStyle(this.messageBox.getChildByName('messageBox'), null).getPropertyValue('font-size'));
         
         this.chatLine.getChildByName('chatLine').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
@@ -99,7 +97,7 @@ export default class ChatWindow extends Window {
         else
             this.chatLog+=message; 
         this.messageBox.setHTML(this.chatLog);
-        this.messageBox.node.scrollIntoView(false);
+        this.messageBox.node.scrollIntoView();
         
         
     }
