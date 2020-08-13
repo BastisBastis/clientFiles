@@ -34,7 +34,7 @@ export default class ChatWindow extends Window {
         
         let self = this;
 
-        this.messageBox = scene.add.dom(x+width/2,y+height/2,'div',messageBoxStyle,'').setScrollFactor(0);
+        this.messageBox = scene.add.dom(x+width/2,y+(height-inputHeight)/2,'div',messageBoxStyle,'').setScrollFactor(0);
         console.log('width: '+width, 'boxWidth: '+this.messageBox.node.style.width);
 
         let currTap = false;
