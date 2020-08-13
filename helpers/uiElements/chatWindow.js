@@ -97,8 +97,8 @@ export default class ChatWindow extends Window {
         else
             this.chatLog+=message; 
         this.messageBox.setHTML(this.chatLog);
-        this.messageBox.node.scrollIntoView();
-        
+        //this.messageBox.node.scrollIntoView();
+        this.messageBox.node.scrollTop = this.messageBox.node.scrollHeight;
         
     }
     
