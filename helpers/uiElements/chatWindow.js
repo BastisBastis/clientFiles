@@ -24,7 +24,7 @@ export default class ChatWindow extends Window {
         const messageBoxStyle = `
             box-sizing: border-box; 
             background-color:transparent;  
-            overflow-y:auto; 
+            overflow-y:scroll; 
             width: ${width-10}px;
             height: ${height-inputHeight}px;
             margin: 0 0px;
