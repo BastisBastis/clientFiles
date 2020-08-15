@@ -101,7 +101,7 @@ export default class ChatWindow extends Window {
        
     }
     
-    isTyping() {
+    isTyping() { 
         if (document.activeElement == this.chatLine.getChildByName('chatLine'))
             return true;
         return false;
