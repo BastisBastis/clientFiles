@@ -29,6 +29,10 @@ export default class UI {
    
     this.updateButtons();
   }
+
+  isTyping () {
+    return this.chatWindow.isTyping();
+  }
   
   updateWithData(data) {
     

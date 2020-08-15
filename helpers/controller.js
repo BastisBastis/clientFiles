@@ -48,6 +48,8 @@ export default class Controller {
 		
     setupKeyboardControls(scene) {
 		scene.input.keyboard.on('keydown', function (event) { 
+            if (scene.ui.isTyping())
+                return;
           	if ((event.code == 'ArrowUp' || event.code == 'KeyW' || event.code == 'KeyR') && !scene.player.isMovingForward) {
             	scene.player.moveForward(); 
               	scene.socket.emit('moveForward');
@@ -72,6 +74,8 @@ export default class Controller {
 		});
 		
 		scene.input.keyboard.on('keyup', function (event) { 
+            if (scene.ui.isTyping())
+                return;
 			if (event.code == 'ArrowUp' || event.code == 'ArrowDown' || event.code == 'KeyW' || event.code == 'KeyS') {
             	scene.player.stopMoving(); 
               	scene.socket.emit('stopMoving');
