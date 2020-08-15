@@ -224,7 +224,11 @@ export default class Game extends Phaser.Scene {
     useAction(self) {
         if (self.player.target && self.corpses[self.player.target.id]) {
             self.socket.emit('requestCorpseLooting',{corpseId:self.player.target.id, playerId:self.player.id});          	
-        }
+		}
+		if (self.ui.chatWindow.isTyping())
+			self.debugPrint('japp');
+		else
+			self.debugPrint('nepp');
     }
 	
 	drawMap() {
